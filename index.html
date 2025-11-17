@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Five Fold Forward</title>
+
+    <!-- This is the crucial link that connects your HTML to the locally compiled Tailwind CSS -->
+    <link href="./dist/output.css" rel="stylesheet" />
+
+    <style>
+      @keyframes appear {
+        from {
+          opacity: 0;
+          scale: 0.5;
+        }
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+      .autoShow {
+        animation: appear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 100vh;
+      }
+
+      .slide-in-div {
+        /* Initial state - off-screen */
+        transform: translateX(
+          -100%
+        ); /* or translateY(-100%) for vertical slide */
+        opacity: 0;
+
+        /* Animation properties */
+        animation-name: slideIn;
+        animation-duration: 1s; /* Adjust duration as needed */
+        animation-fill-mode: forwards; /* Keep the final state */
+        animation-delay: 0.5s; /* Delay before animation starts after page load */
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(-5%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .fade-up {
+        /* Initial state - off-screen */
+        transform: translateX(
+          -100%
+        ); /* or translateY(-100%) for vertical slide */
+        opacity: 0;
+
+        /* Animation properties */
+        animation-name: fadeUp;
+        animation-duration: 1s; /* Adjust duration as needed */
+        animation-fill-mode: forwards; /* Keep the final state */
+        animation-delay: 0.5s; /* Delay before animation starts after page load */
+      }
+
+      @keyframes fadeUp {
+        from {
+          transform: translateY(5%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        /* Start with opacity 0 */
+        from {
+          opacity: 0;
+        }
+        /* End with opacity 1 (default) */
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade-in {
+        /* Element remains in its normal position - no transform */
+        opacity: 0; /* Ensures visibility is hidden before animation starts */
+
+        /* Animation properties */
+        animation-name: fadeIn;
+        animation-duration: 2s; /* Adjust duration as needed */
+        animation-fill-mode: forwards; /* Keep the final state (opacity: 1) */
+        animation-delay: 0.5s; /* Delay before animation starts after page load */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-bl from-slate-600 to-slate-950 text-text-50 bg-cover bg-bottom bg-fixed"
+    style="background-image: url(./src/assets/bg.jpg)"
+  >
+    <div class="view">
+      <!-- //Header section with logo -->
+      <section
+        class="bg-gradient-to-tr from-slate-600 to-slate-950 reveal slide-in-div"
+      >
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+          <!-- Main Heading Text (Dark in light mode, Light in dark mode) -->
+          <h1
+            class="mb-4 text-4xl tracking-tight leading-none md:text-5xl lg:text-6xl flex justify-between items-center"
+          >
+            <img src="./src/assets/fivefoldforward.png" class="" />
+            <div>&nbsp;</div>
+            <div>
+              <a href="http://www.youtube.com"
+                ><img src="./src/assets/social.png" style="height: 75px"
+              /></a>
+            </div>
+          </h1>
+        </div>
+      </section>
+
+      <section class="fade-in">
+        <div
+          class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16 autoShow"
+        >
+          <div class="flex flex-col justify-center">
+            <h1
+              class="mb-4 text-4xl tracking-tight leading-none text-gray-100 md:text-5xl lg:text-6xl dark:text-white"
+              style="text-shadow: 2px 2px 5px black"
+            >
+              Your Unique Design
+            </h1>
+            <p
+              class="mb-8 text-lg font-thin text-gray-100 lg:text-xl dark:text-gray-400"
+              style="text-shadow: 2px 2px 5px black"
+            >
+              When God created you, He hard-wired you with unique abilities,
+              gifts &amp; talents so that you could fulfill a specific purpose
+              here on this earth – to see Gods Kingdom come, and His will be
+              done, on earth as it is in heaven. Here at Five Fold Forward, we
+              want to help you not only discover what your spiritual gifts are,
+              but we want to help you understand what to do with them so you can
+              become that hands and feet of Jesus to this lost and dying world.
+            </p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0">
+              <a
+                href="#"
+                class="md:inline-flex hidden justify-center items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-green-400 hover:text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+              >
+                Our YouTube Channel
+                <svg
+                  class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <iframe
+              class="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
+              src="https://www.youtube.com/embed/fOB73qRVGJs?si=Yk3owpreF-0HgClA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="fade-up"
+        style="
+          border-top: 1px solid greenyellow;
+          border-bottom: 1px solid greenyellow;
+          background-color: rgba(8, 31, 31, 0.438);
+          box-shadow: 5px 5px 20px black;
+        "
+      >
+        <div
+          class="autoShow py-8 px-4 mx-auto max-w-screen-xl font-thin text-white text-2xl [text-shadow:1px_1px_5px_var(--tw-shadow-color)] shadow-black"
+          style="text-shadow: 2px 2px 5px black"
+        >
+          Five Fold Forward exists as a free resource to equip followers of
+          Jesus to become all that God has created them to be. Religion was
+          never meant to be your path – so come and join us on a journey as we
+          re-discover the ancient pathways of scripture and the original
+          blueprint of the New Testament Church!
+        </div>
+      </section>
+
+      <section
+        class="bg-gradient-to-bl from-slate-600 to-slate-950 py-24 sm:py-32"
+      >
+        <div
+          class="py-4 px-4 mx-auto max-w-screen-xl grid lg:grid-cols-2 gap-8 lg:gap-16 autoShow"
+        >
+          <div>
+            <div
+              class="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl"
+              style="box-shadow: 5px 5px 20px black"
+            >
+              <img src="./src/assets/booklet.jpg" />
+            </div>
+          </div>
+          <div class="flex flex-col justify-center">
+            <h1
+              class="mb-4 text-4xl tracking-tight leading-none md:text-5xl lg:text-6xl text-white"
+            >
+              Building true disciples.
+            </h1>
+            <p
+              class="mb-6 text-lg font-thin text-gray-200 lg:text-xl dark:text-gray-400"
+            >
+              Our resources are designed to build true disciples of Jesus who
+              are equipped with supernatural tools to engage culture &amp;
+              transform lives through the power of the Gospel.
+            </p>
+            <a
+              href="#"
+              class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
+              >Our Resources are coming soon...
+              <svg
+                class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 autoShow">
+          <div
+            class="bg-gray-800 border border-gray-200 rounded-lg p-8 md:p-12 mb-8 shadow-xl"
+            style="box-shadow: 5px 5px 20px black"
+          >
+            <a
+              href="#"
+              class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2"
+            >
+              <svg
+                class="w-2.5 h-2.5 me-1.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z"
+                />
+              </svg>
+              Resources Coming Soon
+            </a>
+            <h1 class="text-white text-3xl md:text-4xl mb-2">
+              Every Believer is a Minister
+            </h1>
+            <p class="text-lg font-thin text-gray-100 mb-6">
+              Every believer has the ability to hear from God and is divinely
+              empowered by God to follow Him and do what He says. Modern day
+              religion has conditioned most church goers to believe that only
+              “special” men hear from God and are equipped &amp; qualified to
+              minister. Yet, the Bible tells us that the purpose of the five
+              fold ministry is to equip the entire body of Christ to be
+              ministers. If you are a believer, you are a minister – and we want
+              to help you be an effective one.
+            </p>
+            <!-- <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                Read more
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a> -->
+          </div>
+          <div class="grid gap-8">
+            <div
+              class="bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12"
+              style="box-shadow: 5px 5px 20px black"
+              style="box-shadow: 5px 5px 20px black"
+            >
+              <a
+                href="#"
+                class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2"
+              >
+                <svg
+                  class="w-2.5 h-2.5 me-1.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z"
+                  />
+                </svg>
+                Resources Coming Soon
+              </a>
+              <h2 class="text-white text-3xl mb-2">
+                A truly personal relationship
+              </h2>
+              <p class="text-lg font-thin text-gray-50 mb-4">
+                Our desire for you is to grow closer with Jesus and be filled
+                with the Holy Spirit so much that you become “rooted and
+                grounded in love, so that you can be filled with the fullness of
+                God”. We believe that everything you need flows from this place.
+              </p>
+              <!-- <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read more
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                </a> -->
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 border border-gray-100 rounded-lg p-8 md:p-12 mt-8"
+            style="box-shadow: 5px 5px 20px black"
+          >
+            <a
+              href="#"
+              class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2"
+            >
+              <svg
+                class="w-2.5 h-2.5 me-1.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z"
+                />
+              </svg>
+              Resources Coming Soon
+            </a>
+
+            <div class="grid grid-cols-12 gap-6 items-center">
+              <!-- Column 1: Blockquote (takes 8 columns on medium screens and up, full width on small screens) -->
+              <div class="col-span-12 md:col-span-8">
+                <h2 class="text-white text-3xl md:text-3xl mb-2">
+                  These Resources are Free so that you can Freely Give
+                </h2>
+                <p class="text-lg font-thin text-gray-50 mb-6">
+                  We are providing all of our resources free of charge so that
+                  you can use all of your earthly finances to bless those in
+                  need and advance heavens agenda here on this earth. Our
+                  mandate is to equip and send out a company of fearless men and
+                  women empowered by the truth of Gods Word, filled with the
+                  supernatural power of the Holy Spirit and walking in the
+                  authority paid for by the blood of Jesus. Together, we will
+                  fulfill our Heavenly Fathers mandate of advancing His Kingdom
+                  “on earth as it is in Heaven”.
+                </p>
+
+                <blockquote
+                  class="text-xl italic font-semibold text-gray-100 border-l-4 border-gray-50 pl-4 pr-4 hidden"
+                >
+                  <p class="mb-4">
+                    "For those who have an ear, let them hear. We are building
+                    an army of fearless men and women empowered by the word of
+                    God and the power given to us by the blood shit on the cross
+                    by Jesus Jesus Christ of Nazareth. Together, we will subdue
+                    the Earth as commanded by our heavenly father "
+                  </p>
+                  <cite
+                    class="flex items-center justify-start text-sm text-gray-500"
+                  >
+                    <!-- <img
+                    class="w-4 h-4 rounded-full mr-3"
+                    src="avatar.jpg"
+                    alt="profile picture"
+                  /> -->
+                    - Five Fold Forward Fellowship
+                  </cite>
+                </blockquote>
+              </div>
+
+              <!-- Column 2: Image (takes 4 columns on medium screens and up, full width on small screens) -->
+              <div class="col-span-12 md:col-span-4 flex justify-center">
+                <img
+                  src="./src/assets/cross.jpg"
+                  alt="A cross"
+                  class="rounded-lg shadow-lg h-[400px]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="">
+        <div
+          class="bg-gradient-to-bl from-blue-900 to-green-500 py-24 sm:py-32"
+        >
+          <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 autoShow">
+            <p
+              class="mx-auto mt-2 max-w-lg text-center mb-4 text-4xl tracking-tight leading-none text-gray-100 md:text-5xl lg:text-6xl"
+              style="text-shadow: 5px 5px 20px black"
+            >
+              Building a spiritual foundation
+            </p>
+            <div
+              class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2"
+            >
+              <div class="relative lg:row-span-2">
+                <div
+                  class="absolute inset-px rounded-lg bg-white lg:rounded-l-4xl"
+                  style="box-shadow: 5px 5px 20px black"
+                ></div>
+                <div
+                  class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]"
+                >
+                  <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                    <p
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
+                    >
+                      YOU are the Temple of the Holy Spirit
+                    </p>
+                    <p
+                      class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
+                    >
+                      The world has been trained to come to a building to find
+                      God – but God wants to send you out into the world as a
+                      living temple, filled with His Spirit and marked by His
+                      love.
+                    </p>
+                  </div>
+                  <div
+                    class="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm"
+                  >
+                    <div
+                      class="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[5cqw] border-x-[1cqw] border-t-[1cqw] border-gray-700 bg-gray-900 shadow-2xl"
+                    >
+                      <img
+                        class="size-full object-cover object-top"
+                        src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-l-4xl"
+                ></div>
+              </div>
+              <div class="relative max-lg:row-start-1">
+                <div
+                  class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl"
+                  style="box-shadow: 5px 5px 20px black"
+                ></div>
+                <div
+                  class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]"
+                >
+                  <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+                    <p
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
+                    >
+                      Be a beacon.
+                    </p>
+                    <p
+                      class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
+                    >
+                      Be the light the world needs.
+                    </p>
+                  </div>
+                  <div
+                    class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2"
+                  >
+                    <img
+                      class="w-full max-lg:max-w-xs"
+                      src="https://images.unsplash.com/photo-1617052083857-81678da101e7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl"
+                ></div>
+              </div>
+              <div
+                class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2"
+              >
+                <div
+                  class="absolute inset-px rounded-lg bg-white"
+                  style="box-shadow: 5px 5px 20px black"
+                ></div>
+                <div
+                  class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]"
+                >
+                  <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+                    <p
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
+                    >
+                      Become Gods supernatural solution
+                    </p>
+                    <p
+                      class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
+                    >
+                      Learn to live your life as Gods supernatural solution to
+                      every need and every problem you encounter.
+                    </p>
+                  </div>
+                  <div
+                    class="@container flex flex-1 items-center max-lg:py-6 lg:pb-2"
+                  >
+                    <img
+                      class="object-cover w-100 p-8"
+                      src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"
+                ></div>
+              </div>
+              <div class="relative lg:row-span-2">
+                <div
+                  class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-r-4xl"
+                  style="box-shadow: 5px 5px 20px black"
+                ></div>
+                <div
+                  class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]"
+                >
+                  <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                    <p
+                      class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
+                    >
+                      YOU are His Church
+                    </p>
+                    <p
+                      class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
+                    >
+                      Learn to BE the church, His Body, His hands and feet to a
+                      world in desperate need of a savior.
+                    </p>
+                  </div>
+                  <div class="relative min-h-120 w-full grow">
+                    <div
+                      class="absolute inset-px rounded-lg bg-white lg:rounded-l-4xl"
+                    ></div>
+                    <div
+                      class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]"
+                    >
+                      <div
+                        class="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm"
+                      >
+                        <div
+                          class="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[5cqw] border-x-[1cqw] border-t-[1cqw] border-gray-700 bg-gray-900 shadow-2xl"
+                        >
+                          <img
+                            class="size-full object-cover object-top"
+                            src="https://images.unsplash.com/photo-1604881991720-f91add269bed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-r-4xl"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-gray-900 md:p-32"
+        style="
+          background-image: url(./src/assets/hands.jpg);
+          background-position: center center;
+          background-size: contain;
+        "
+      >
+        <div
+          class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative autoShow"
+        >
+          <a
+            href="#"
+            class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm rounded-full bg-lime-500 text-black hover:bg-blue-200"
+          >
+            <span
+              class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 me-3"
+              >Question:</span
+            >
+            <span class="text-sm font-medium"
+              >Did you find what you were looking for?</span
+            >
+            <svg
+              class="w-2.5 h-2.5 ms-2 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+          </a>
+          <h1
+            class="mb-[8rem] text-4xl tracking-tight leading-none md:text-5xl lg:text-6xl text-white autoShow"
+          >
+            Be a part of something much bigger than a building – Discover your
+            Function within His Body
+          </h1>
+          <p
+            class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200"
+          ></p>
+          <div
+            class="max-w-4xl mx-auto p-4 sm:p-8 bg-white shadow-xl rounded-lg"
+            style="box-shadow: 5px 5px 20px black"
+          >
+            <!-- Quoted Paragraph -->
+            <blockquote
+              class="mb-8 border-l-4 border-gray-300 pl-6 italic text-gray-700"
+            >
+              <p
+                class="text-xl md:text-2xl leading-relaxed text-slate-700 autoShow"
+                style="box-shadow: 5px 5px 20px rgba(39, 39, 39, 0.2.15)"
+              >
+                At Five Fold Forward, we believe that the only way forward for
+                the world-wide church of Jesus Christ – is to re-discover and
+                bring a fresh understanding to the original blueprint that Jesus
+                Himself gave to His Church – the five fold ministry as described
+                in Eph 4:11-16. This blueprint, this model of ministry, is how
+                the early church turned the world upside down and transformed
+                culture everywhere they went. Where religion and traditions of
+                man have lost the culture war in our current day, we believe
+                that implementing this scriptural mandate can and will turn the
+                tide back in Heavens favor and bring lasting transformation to
+                the world around us.
+              </p>
+            </blockquote>
+
+            <!-- Structured List Section -->
+            <!-- *** ADDED 'relative' CLASS HERE *** -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg container relative"
+              style="box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.203)"
+            >
+              <h2 class="text-2xl font-bold mb-4 text-gray-800">
+                Scriptural Foundation
+              </h2>
+              <ul class="list-none space-y-4 text-gray-600">
+                <li class="flex items-start">
+                  <span
+                    class="font-semibold text-gray-900 mr-2 w-32 flex-shrink-0"
+                    >Key Verses:</span
+                  >
+                  <span class="flex-grow"
+                    >The concept of the five fold ministry is found in Ephesians
+                    4:11-16. Other important verses describing the relationship
+                    between the five fold ministry and spiritual gifts are
+                    Ephesians 2:20-22, 1 Corinthians 12:4-11, 27-31, Romans
+                    12:6-8.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-grow"
+                    >The text attributes these roles as gifts from Christ to the
+                    church.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="flex-grow"
+                    >The Apostle Paul wrote about these roles to the church in
+                    Ephesus, explaining their purpose.</span
+                  >
+                </li>
+
+                <!-- The Five Roles (Inline & Centered Formatting) -->
+                <li>
+                  <span
+                    class="font-semibold text-gray-900 block mb-2 text-center"
+                    >The five roles:</span
+                  >
+
+                  <!-- Updated Classes for Centering: -->
+                  <ul
+                    class="flex flex-wrap justify-center gap-x-6 gap-y-2 list-disc list-inside text-gray-600"
+                  >
+                    <li>Apostles</li>
+                    <li>Prophets</li>
+                    <li>Evangelists</li>
+                    <li>Pastors</li>
+                    <li>Teachers</li>
+                  </ul>
+                </li>
+
+                <!-- Purpose -->
+                <li class="flex items-start">
+                  <span
+                    class="font-semibold text-gray-900 mr-2 w-32 flex-shrink-0"
+                    >Purpose:</span
+                  >
+                  <span class="flex-grow"
+                    >To equip and train all believers in spiritual gifts and
+                    disciplines for the work of service, to build up the body of
+                    Christ, and to bring every believer into full maturity and
+                    unity of the faith.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Necessary CSS Styles for the effect -->
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "james-landing-5x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.2.14",
+    "@iconify-json/fluent-emoji-flat": "^1.2.5",
+    "@iconify-json/mdi-light": "^1.2.2",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify-json/vscode-icons": "^1.2.33",
+    "@iconify/tailwind": "^1.2.0",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}
